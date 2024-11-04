@@ -1,0 +1,2288 @@
+{
+	"info": {
+		"_postman_id": "fcf52512-d68e-4791-91fc-ba8498710322",
+		"name": "Dokumentasi Rest API toko-buku Pak Mulyo",
+		"description": "REST API Peminjaman Buku Pak Mulyono",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31838268",
+		"_collection_link": "https://www.postman.com/jayapermadi/workspace/my-workspace/collection/31838268-fcf52512-d68e-4791-91fc-ba8498710322?action=share&source=collection_link&creator=31838268"
+	},
+	"item": [
+		{
+			"name": "books",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"buku saya\",\r\n    \"authorId\": \"123asd\",\r\n    \"category\": \"Horror\",\r\n    \"description\": \"buku saya ini horor\",\r\n    \"stocks\": 2,\r\n    \"price\": 9000,\r\n    \"image\": \"bukusaya.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/books/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create OK 200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"penemu matematika\",\r\n    \"authorId\": \"6728535a76f070df72f09e3e\",\r\n    \"description\": \"buku saya ini horor\",\r\n    \"stock\": 22,\r\n    \"price\": 69000,\r\n    \"image\": \"bukusaya.png\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/book/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"book",
+										"create"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "290"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"122-4ci8FGjlgUJUHP1R+XWAVvp/7T0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Nov 2024 09:46:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"penemu matematika\",\n    \"authorId\": \"6728535a76f070df72f09e3e\",\n    \"description\": \"buku saya ini horor\",\n    \"stock\": 22,\n    \"price\": 69000,\n    \"image\": \"bukusaya.png\",\n    \"deleted_at\": null,\n    \"_id\": \"672897e30c654e9cd1e7c635\",\n    \"created_at\": \"2024-11-04T09:46:11.021Z\",\n    \"updated_at\": \"2024-11-04T09:46:11.022Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "get list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get list OK 200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/books",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"books"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1159"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"487-c2Z4v+6TPrey+nJWBeQCzTJoQPg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Nov 2024 09:47:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success | OK\",\n    \"message\": \"list of books \",\n    \"data\": [\n        {\n            \"deleted_at\": null,\n            \"_id\": \"672762430e77160adea5cb8c\",\n            \"title\": \"buku saya\",\n            \"category\": \"Horror\",\n            \"description\": \"buku saya ini horor\",\n            \"stock\": 0,\n            \"price\": 9000,\n            \"image\": null,\n            \"__v\": 0,\n            \"created_at\": \"2024-11-04T09:47:02.637Z\",\n            \"updated_at\": \"2024-11-04T09:47:02.637Z\"\n        },\n        {\n            \"deleted_at\": null,\n            \"_id\": \"672762660e77160adea5cb8e\",\n            \"title\": \"buku saya\",\n            \"category\": \"Horror\",\n            \"description\": \"buku saya ini horor\",\n            \"stock\": 21,\n            \"price\": 9000,\n            \"image\": \"bukusaya.png\",\n            \"__v\": 0,\n            \"created_at\": \"2024-11-04T09:47:02.637Z\",\n            \"updated_at\": \"2024-11-04T09:47:02.637Z\"\n        },\n        {\n            \"_id\": \"672855e91e83d32ea7c2dd81\",\n            \"title\": \"buku saya erlangs\",\n            \"authorId\": \"6728535a76f070df72f09e3e\",\n            \"description\": \"buku saya ini horor\",\n            \"stock\": 22,\n            \"price\": 9000,\n            \"image\": \"bukusaya.png\",\n            \"deleted_at\": null,\n            \"created_at\": \"2024-11-04T05:04:41.069Z\",\n            \"updated_at\": \"2024-11-04T05:04:41.069Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"672897e30c654e9cd1e7c635\",\n            \"title\": \"penemu matematika\",\n            \"authorId\": \"6728535a76f070df72f09e3e\",\n            \"description\": \"buku saya ini horor\",\n            \"stock\": 22,\n            \"price\": 69000,\n            \"image\": \"bukusaya.png\",\n            \"deleted_at\": null,\n            \"created_at\": \"2024-11-04T09:46:11.021Z\",\n            \"updated_at\": \"2024-11-04T09:46:11.022Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "get by id OK 200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/book/672897e30c654e9cd1e7c635",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"book",
+										"672897e30c654e9cd1e7c635"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "355"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"163-wZ31vu9n9Q7OdtCp+5u77Ox99mY\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Nov 2024 09:49:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success | OK\",\n    \"message\": \"list of books by id\",\n    \"data\": {\n        \"_id\": \"672897e30c654e9cd1e7c635\",\n        \"title\": \"penemu matematika\",\n        \"authorId\": \"6728535a76f070df72f09e3e\",\n        \"description\": \"buku saya ini horor\",\n        \"stock\": 22,\n        \"price\": 69000,\n        \"image\": \"bukusaya.png\",\n        \"deleted_at\": null,\n        \"created_at\": \"2024-11-04T09:46:11.021Z\",\n        \"updated_at\": \"2024-11-04T09:46:11.022Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"title\": \"buku saya\",\r\n            \"category\": \"Horror\",\r\n            \"description\": \"buku saya ini horor\",\r\n            \"stock\": 88,\r\n            \"price\": 9000,\r\n            \"image\": \"bukusaya.png\",\r\n            \"__v\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/book/67275d6c52635da358b854d8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"book",
+								"67275d6c52635da358b854d8"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update 200 OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"title\": \"penemu matematika\",\r\n        \"authorId\": \"6728535a76f070df72f09e3e\",\r\n        \"description\": \"buku saya ini horor JANGAN DI TONTON\",\r\n        \"stock\": 122,\r\n        \"price\": 69000,\r\n        \"image\": \"bukusaya.png\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/book/672855e91e83d32ea7c2dd81",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"book",
+										"672855e91e83d32ea7c2dd81"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "308"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"134-/LoHozJG18jXlugpxT6mrMLCbYw\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Nov 2024 09:52:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"672855e91e83d32ea7c2dd81\",\n    \"title\": \"penemu matematika\",\n    \"authorId\": \"6728535a76f070df72f09e3e\",\n    \"description\": \"buku saya ini horor JANGAN DI TONTON\",\n    \"stock\": 122,\n    \"price\": 69000,\n    \"image\": \"bukusaya.png\",\n    \"deleted_at\": null,\n    \"created_at\": \"2024-11-04T05:04:41.069Z\",\n    \"updated_at\": \"2024-11-04T05:04:41.069Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"title\": \"buku saya\",\r\n            \"category\": \"Horror\",\r\n            \"description\": \"buku saya ini horor\",\r\n            \"stock\": 88,\r\n            \"price\": 9000,\r\n            \"image\": \"bukusaya.png\",\r\n            \"__v\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/book/67275d6c52635da358b854d8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"book",
+								"67275d6c52635da358b854d8"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete OK 200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"title\": \"buku saya\",\r\n            \"category\": \"Horror\",\r\n            \"description\": \"buku saya ini horor\",\r\n            \"stock\": 88,\r\n            \"price\": 9000,\r\n            \"image\": \"bukusaya.png\",\r\n            \"__v\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/book/672897e30c654e9cd1e7c635",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"book",
+										"672897e30c654e9cd1e7c635"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "290"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"122-E2N/3Sgb/slUFOcZmbMRoBX0tb4\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Nov 2024 09:53:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"672897e30c654e9cd1e7c635\",\n    \"title\": \"penemu matematika\",\n    \"authorId\": \"6728535a76f070df72f09e3e\",\n    \"description\": \"buku saya ini horor\",\n    \"stock\": 22,\n    \"price\": 69000,\n    \"image\": \"bukusaya.png\",\n    \"deleted_at\": null,\n    \"created_at\": \"2024-11-04T09:46:11.021Z\",\n    \"updated_at\": \"2024-11-04T09:46:11.022Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "upload",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "OK 200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"image\" : \"lelek.png\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/book/upload/672762430e77160adea5cb8c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"book",
+										"upload",
+										"672762430e77160adea5cb8c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "154"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9a-spDvlqIVF0NSKsiU6LYi8VHtJGA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Nov 2024 13:07:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"672762430e77160adea5cb8c\",\n    \"title\": \"buku saya\",\n    \"category\": \"Horror\",\n    \"description\": \"buku saya ini horor\",\n    \"stock\": 0,\n    \"price\": 9000,\n    \"image\": null,\n    \"__v\": 0\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "get list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK 200 CATEGORY",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/categories",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "200"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c8-HLa9HGfJI4jG3k9HL13h9ZEjSvw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Nov 2024 13:33:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success | OK\",\n    \"message\": \"list of categories\",\n    \"data\": [\n        {\n            \"_id\": \"67277a8a4d5817d5a1d76f41\",\n            \"name\": \"Horror\",\n            \"updated_at\": null,\n            \"deleted_at\": null,\n            \"created_at\": \"2024-11-03T13:28:42.704Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "OK 200 CATEGORY BY ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/category/67277a8a4d5817d5a1d76f41",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										"67277a8a4d5817d5a1d76f41"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "204"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cc-IpxDAr7TglHRKloqtqLa7DVGpfc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Nov 2024 13:36:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success | OK\",\n    \"message\": \"list of categories by id\",\n    \"data\": {\n        \"_id\": \"67277a8a4d5817d5a1d76f41\",\n        \"name\": \"Horror\",\n        \"updated_at\": null,\n        \"deleted_at\": null,\n        \"created_at\": \"2024-11-03T13:28:42.704Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"buku saya\",\r\n    \"authorId\": \"123asd\",\r\n    \"category\": \"Horror\",\r\n    \"description\": \"buku saya ini horor\",\r\n    \"stocks\": 2,\r\n    \"price\": 9000,\r\n    \"image\": \"bukusaya.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/books/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK 200 CREATE",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Horror\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"category"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "134"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"86-41vPEaMRhcW1Q5JFnzCCY+Lh9P8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Nov 2024 13:28:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Horror\",\n    \"updated_at\": null,\n    \"deleted_at\": null,\n    \"_id\": \"67277a8a4d5817d5a1d76f41\",\n    \"created_at\": \"2024-11-03T13:28:42.704Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"title\": \"buku saya\",\r\n            \"category\": \"Horror\",\r\n            \"description\": \"buku saya ini horor\",\r\n            \"stock\": 88,\r\n            \"price\": 9000,\r\n            \"image\": \"bukusaya.png\",\r\n            \"__v\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/book/67275d6c52635da358b854d8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"book",
+								"67275d6c52635da358b854d8"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update 200 CATEGORY",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"name\": \"Horror editan\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/category/67277a8a4d5817d5a1d76f41",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										"67277a8a4d5817d5a1d76f41"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "163"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a3-4B6wtzW6KxW0z8ZSOVgp2UCVMSM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Nov 2024 13:42:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Horror editan\",\n    \"deleted_at\": null,\n    \"_id\": \"67277db6a960e1ff3ecd7a69\",\n    \"created_at\": \"2024-11-03T13:42:14.349Z\",\n    \"updated_at\": \"2024-11-03T13:42:14.349Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"title\": \"buku saya\",\r\n            \"category\": \"Horror\",\r\n            \"description\": \"buku saya ini horor\",\r\n            \"stock\": 88,\r\n            \"price\": 9000,\r\n            \"image\": \"bukusaya.png\",\r\n            \"__v\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/book/67275d6c52635da358b854d8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"book",
+								"67275d6c52635da358b854d8"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete 200 OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"title\": \"buku saya\",\r\n            \"category\": \"Horror\",\r\n            \"description\": \"buku saya ini horor\",\r\n            \"stock\": 88,\r\n            \"price\": 9000,\r\n            \"image\": \"bukusaya.png\",\r\n            \"__v\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/category/67277db6a960e1ff3ecd7a69",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"category",
+										"67277db6a960e1ff3ecd7a69"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "237"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ed-IUBpKxGqabwanZU6JNVSh+vfSUg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Nov 2024 10:02:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success | OK\",\n    \"message\": \"delete category successfully\",\n    \"data\": {\n        \"_id\": \"67277db6a960e1ff3ecd7a69\",\n        \"name\": \"Horror editan\",\n        \"deleted_at\": null,\n        \"created_at\": \"2024-11-03T13:42:14.349Z\",\n        \"updated_at\": \"2024-11-03T13:42:14.349Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Author",
+			"item": [
+				{
+					"name": "get list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get list author ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/authors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"authors"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "374"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"176-KWuh/HrhD/MiMgYDMBt3JIlKeNY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Nov 2024 14:09:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success | OK\",\n    \"message\": \"List Authors\",\n    \"data\": [\n        {\n            \"_id\": \"67278366e19144fe413f65b9\",\n            \"name\": \"zainudin\",\n            \"deleted_at\": null,\n            \"created_at\": \"2024-11-03T14:06:30.624Z\",\n            \"updated_at\": \"2024-11-03T14:06:30.624Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6727842bf62a9b2ca1ff9e1e\",\n            \"name\": \"barga\",\n            \"deleted_at\": null,\n            \"created_at\": \"2024-11-03T14:09:47.362Z\",\n            \"updated_at\": \"2024-11-03T14:09:47.362Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "get by id Ok Authors",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/author/6727842bf62a9b2ca1ff9e1e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"author",
+										"6727842bf62a9b2ca1ff9e1e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "218"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"da-q+WOkCxWyZeJ43E6qx9YBOQquVw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Nov 2024 14:16:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success | OK\",\n    \"message\": \"List Author By id\",\n    \"data\": {\n        \"_id\": \"6727842bf62a9b2ca1ff9e1e\",\n        \"name\": \"barga\",\n        \"deleted_at\": null,\n        \"created_at\": \"2024-11-03T14:09:47.362Z\",\n        \"updated_at\": \"2024-11-03T14:09:47.362Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"buku saya\",\r\n    \"authorId\": \"123asd\",\r\n    \"category\": \"Horror\",\r\n    \"description\": \"buku saya ini horor\",\r\n    \"stocks\": 2,\r\n    \"price\": 9000,\r\n    \"image\": \"bukusaya.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/books/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create ok author",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"name\" : \"barga\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/author",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"author"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "227"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e3-GhARZpucRa9Gug5A7BRTcpI+wj8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Nov 2024 14:09:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success | OK\",\n    \"message\": \"create author successfully\",\n    \"data\": {\n        \"name\": \"barga\",\n        \"deleted_at\": null,\n        \"_id\": \"6727842bf62a9b2ca1ff9e1e\",\n        \"created_at\": \"2024-11-03T14:09:47.362Z\",\n        \"updated_at\": \"2024-11-03T14:09:47.362Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\": \"barga baruak gadang\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/author/6727842bf62a9b2ca1ff9e1e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"author",
+								"6727842bf62a9b2ca1ff9e1e"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update ok author",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"name\": \"barga baruak gadang\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/author/6727842bf62a9b2ca1ff9e1e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"author",
+										"6727842bf62a9b2ca1ff9e1e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "241"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f1-XlpxzrzHhh+HZogi3oKOvxLpoNM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Nov 2024 14:27:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success | OK\",\n    \"message\": \"update author successfully\",\n    \"data\": {\n        \"_id\": \"6727842bf62a9b2ca1ff9e1e\",\n        \"name\": \"barga baruak gadang\",\n        \"deleted_at\": null,\n        \"created_at\": \"2024-11-03T14:09:47.362Z\",\n        \"updated_at\": \"2024-11-03T14:09:47.362Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"title\": \"buku saya\",\r\n            \"category\": \"Horror\",\r\n            \"description\": \"buku saya ini horor\",\r\n            \"stock\": 88,\r\n            \"price\": 9000,\r\n            \"image\": \"bukusaya.png\",\r\n            \"__v\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/book/67275d6c52635da358b854d8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"book",
+								"67275d6c52635da358b854d8"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete author OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n            \"title\": \"buku saya\",\r\n            \"category\": \"Horror\",\r\n            \"description\": \"buku saya ini horor\",\r\n            \"stock\": 88,\r\n            \"price\": 9000,\r\n            \"image\": \"bukusaya.png\",\r\n            \"__v\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/author/6727842bf62a9b2ca1ff9e1e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"author",
+										"6727842bf62a9b2ca1ff9e1e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "241"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f1-lvItBQoBGDQKX2X72oLwcrmpYdk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Nov 2024 14:28:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success | OK\",\n    \"message\": \"delete author successfully\",\n    \"data\": {\n        \"_id\": \"6727842bf62a9b2ca1ff9e1e\",\n        \"name\": \"barga baruak gadang\",\n        \"deleted_at\": null,\n        \"created_at\": \"2024-11-03T14:09:47.362Z\",\n        \"updated_at\": \"2024-11-03T14:09:47.362Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "image",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"title\": \"buku saya\",\r\n            \"category\": \"Horror\",\r\n            \"description\": \"buku saya ini horor\",\r\n            \"stock\": 88,\r\n            \"price\": 9000,\r\n            \"image\": \"bukusaya.png\",\r\n            \"__v\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/book/67275d6c52635da358b854d8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"book",
+								"67275d6c52635da358b854d8"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "upload ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n            \"image\": \"bukusaya.png\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/author/67278366e19144fe413f65b9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"author",
+										"67278366e19144fe413f65b9"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "249"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f9-g9EJInZhuEdaNEVeBjLvtl0Z9e0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 03 Nov 2024 14:38:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success | OK\",\n    \"message\": \"Upload image author successfully\",\n    \"data\": {\n        \"_id\": \"67278366e19144fe413f65b9\",\n        \"name\": \"zainudin\",\n        \"deleted_at\": null,\n        \"created_at\": \"2024-11-03T14:06:30.624Z\",\n        \"updated_at\": \"2024-11-03T14:06:30.624Z\",\n        \"__v\": 0,\n        \"image\": null\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "book-category",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"buku saya\",\r\n    \"authorId\": \"123asd\",\r\n    \"category\": \"Horror\",\r\n    \"description\": \"buku saya ini horor\",\r\n    \"stocks\": 2,\r\n    \"price\": 9000,\r\n    \"image\": \"bukusaya.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/books/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create OK 200 CATEGORY",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"bookId\": \"672855e91e83d32ea7c2dd81\",\r\n    \"categoryId\": \"67277a8a4d5817d5a1d76f41\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/bookcategory",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"bookcategory"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "197"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c5-4E05dwAGT0t7Gh/z5DDIKch15Tk\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Nov 2024 10:30:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success | OK\",\n    \"message\": \"create book category successfully\",\n    \"data\": {\n        \"bookId\": \"672855e91e83d32ea7c2dd81\",\n        \"categoryId\": \"67277a8a4d5817d5a1d76f41\",\n        \"_id\": \"6728a2615d4c29959e477623\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get list BOOK CATEGORY",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/bookscategory",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"bookscategory"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "306"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"132-cB8YlmtKkvtoDg0hdMi6xfigWm4\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Nov 2024 10:32:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success | OK\",\n    \"message\": \"list of book category\",\n    \"data\": [\n        {\n            \"_id\": \"6728a2305d4c29959e477621\",\n            \"bookId\": \"672855e91e83d32ea7c2dd81\",\n            \"categoryId\": \"67277a8a4d5817d5a1d76f41\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6728a2615d4c29959e477623\",\n            \"bookId\": \"672855e91e83d32ea7c2dd81\",\n            \"categoryId\": \"67277a8a4d5817d5a1d76f41\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Borrower",
+			"item": [
+				{
+					"name": "get list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get list author OK 200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/borrowers",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"borrowers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "708"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c4-Um0Pj7jDSDqczIj8MQnfNEf+1dE\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Nov 2024 10:45:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success | OK\",\n    \"message\": \"list of borrower\",\n    \"data\": [\n        {\n            \"_id\": \"6728678165c6a291f85666b0\",\n            \"name\": \"Johntel\",\n            \"deleted_At\": null,\n            \"join_At\": \"2024-11-04T06:19:45.933Z\",\n            \"updated_At\": \"2024-11-04T06:19:45.933Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6728692b9d4d480864af4e74\",\n            \"name\": \"preman pasar\",\n            \"deleted_At\": null,\n            \"join_At\": \"2024-11-04T06:26:51.135Z\",\n            \"updated_At\": \"2024-11-04T06:26:51.135Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"67286be0a1365a97d304f719\",\n            \"name\": \"peminjam handal\",\n            \"deleted_At\": null,\n            \"join_At\": \"2024-11-04T06:38:24.986Z\",\n            \"updated_At\": \"2024-11-04T06:38:24.986Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"67286c5aa1365a97d304f71b\",\n            \"name\": \"peminjam handal bro\",\n            \"deleted_At\": null,\n            \"join_At\": \"2024-11-04T06:40:26.034Z\",\n            \"updated_At\": \"2024-11-04T06:40:26.034Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "get by id borrower",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/borrower/672867be65c6a291f85666b2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"borrower",
+										"672867be65c6a291f85666b2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "227"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e3-h7FlSNYchlcQiZ0QhEPLqpFX52I\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Nov 2024 06:21:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success | OK\",\n    \"message\": \"list of borrower by id\",\n    \"data\": {\n        \"_id\": \"672867be65c6a291f85666b2\",\n        \"name\": \"Charles Okto\",\n        \"deleted_At\": null,\n        \"join_At\": \"2024-11-04T06:20:46.414Z\",\n        \"updated_At\": \"2024-11-04T06:20:46.414Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"buku saya\",\r\n    \"authorId\": \"123asd\",\r\n    \"category\": \"Horror\",\r\n    \"description\": \"buku saya ini horor\",\r\n    \"stocks\": 2,\r\n    \"price\": 9000,\r\n    \"image\": \"bukusaya.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/books/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create borrower OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Charles Okto\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/borrower",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"borrower"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "159"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9f-8mUlJG1c51jF+cgGSkAwkYtR5GI\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Nov 2024 06:20:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Charles Okto\",\n    \"deleted_At\": null,\n    \"_id\": \"672867be65c6a291f85666b2\",\n    \"join_At\": \"2024-11-04T06:20:46.414Z\",\n    \"updated_At\": \"2024-11-04T06:20:46.414Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\": \"barga baruak gadang\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/author/6727842bf62a9b2ca1ff9e1e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"author",
+								"6727842bf62a9b2ca1ff9e1e"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update borrower oke",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"peminjam handal bro\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/borrower/67286c5aa1365a97d304f71b",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"borrower",
+										"67286c5aa1365a97d304f71b"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "240"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f0-M/Qdeyia6y3X8vPnQarPRwwIoKs\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Nov 2024 06:41:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success | OK\",\n    \"message\": \"update borrower successfully\",\n    \"data\": {\n        \"_id\": \"67286c5aa1365a97d304f71b\",\n        \"name\": \"peminjam handal bro\",\n        \"deleted_At\": null,\n        \"join_At\": \"2024-11-04T06:40:26.034Z\",\n        \"updated_At\": \"2024-11-04T06:40:26.034Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"title\": \"buku saya\",\r\n            \"category\": \"Horror\",\r\n            \"description\": \"buku saya ini horor\",\r\n            \"stock\": 88,\r\n            \"price\": 9000,\r\n            \"image\": \"bukusaya.png\",\r\n            \"__v\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/book/67275d6c52635da358b854d8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"book",
+								"67275d6c52635da358b854d8"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete borrower OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/borrower/672869369d4d480864af4e76",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"borrower",
+										"672869369d4d480864af4e76"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "231"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e7-J9UWhyoVYE5I//CFW21VQdu/Vqs\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Nov 2024 06:27:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success | OK\",\n    \"message\": \"delete borrower successfully\",\n    \"data\": {\n        \"_id\": \"672869369d4d480864af4e76\",\n        \"name\": \"angga dola\",\n        \"deleted_At\": null,\n        \"join_At\": \"2024-11-04T06:27:02.334Z\",\n        \"updated_At\": \"2024-11-04T06:27:02.334Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Borrowed-Book",
+			"item": [
+				{
+					"name": "get list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/borrowedbooks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"borrowedbooks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get list borrowed book",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/borrowedbooks",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"borrowedbooks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "307"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"133-gCtN2gpaHHinXf892iuneTTuesA\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Nov 2024 09:37:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success | OK\",\n    \"message\": \"list of borrowed book\",\n    \"data\": [\n        {\n            \"_id\": \"6728952a235fe24d814c25e4\",\n            \"borrowerId\": \"6728678165c6a291f85666b0\",\n            \"bookId\": \"672762660e77160adea5cb8e\",\n            \"return_at\": null,\n            \"lateFee\": 7000,\n            \"borrowed_at\": \"2024-11-04T09:34:34.502Z\",\n            \"expectedReturn_at\": \"2024-11-04T09:34:34.502Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"borrowerId\": \"6728678165c6a291f85666b0\",\r\n    \"bookId\": \"672762660e77160adea5cb8e\",\r\n    \"lateFee\": 7000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/borrowedbook",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"borrowedbook"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create borrowedbook oke",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"borrowerId\": \"6728678165c6a291f85666b0\",\r\n    \"bookId\": \"672762660e77160adea5cb8e\",\r\n    \"lateFee\": 7000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/borrowedbook",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"borrowedbook"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "317"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13d-tdjrgPEPi9NWlkKDQlqTET165fk\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 04 Nov 2024 09:34:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success | OK\",\n    \"message\": \"create borrowed book successfully\",\n    \"data\": {\n        \"borrowerId\": \"6728678165c6a291f85666b0\",\n        \"bookId\": \"672762660e77160adea5cb8e\",\n        \"return_at\": null,\n        \"lateFee\": 7000,\n        \"_id\": \"6728952a235fe24d814c25e4\",\n        \"borrowed_at\": \"2024-11-04T09:34:34.502Z\",\n        \"expectedReturn_at\": \"2024-11-04T09:34:34.502Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
